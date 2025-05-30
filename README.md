@@ -57,12 +57,17 @@ Add the following configuration to your Claude Desktop MCP settings:
 
 ```json
 {
-  "mcpServers": {
-    "monkey-server": {
-      "command": "dotnet",
-      "args": ["run", "--project", "path/to/FirstMCPServer"]
+    "mcpServers": {
+        "mcp-monkey-server": {
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "C:\\FirstMCPServer\\FirstMCPServer\\FirstMCPServer.csproj",
+                "--no-build"
+            ]
+        }
     }
-  }
 }
 ```
 
