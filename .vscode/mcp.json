@@ -1,0 +1,13 @@
+{
+    "servers": {
+        "monkeys-mcp": {
+            "type": "stdio",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "C:\\sc\\poc\\FirstMCPServer\\FirstMCPServer\\FirstMCPServer.csproj"                
+            ]
+        }
+    }
+}
