@@ -63,7 +63,7 @@ Add the following configuration to your Claude Desktop MCP settings:
             "args": [
                 "run",
                 "--project",
-                "C:\\FirstMCPServer\\FirstMCPServer\\FirstMCPServer.csproj",
+                "C:\\FirstMCPServer\\FirstMCPServer.csproj",
                 "--no-build"
             ]
         }
@@ -117,10 +117,48 @@ The server implements the Model Context Protocol by:
 
 ## 🧪 Testing
 
-### Manual Testing
+### Manual Testing with Claude Desktop
 1. Start the MCP server
 2. Open Claude Desktop with the server configured
 3. Try the example commands listed above
+
+### Using MCP Tool Inspector
+
+The MCP Tool Inspector is a powerful debugging and testing tool that allows you to interact with your MCP server directly without needing Claude Desktop.
+
+#### Installation
+```bash
+npx @modelcontextprotocol/inspector dotnet run --project path/to/FirstMCPServer
+```
+
+#### Alternative Installation
+If you prefer to install globally:
+```bash
+npm install -g @modelcontextprotocol/inspector
+mcp-inspector dotnet run --project path/to/FirstMCPServer
+```
+
+#### Using the Inspector
+1. **Start the Inspector**: Run the command above to launch the web-based inspector
+2. **Open Browser**: Navigate to the URL shown in the terminal (typically `http://localhost:5173`)
+3. **Explore Tools**: The inspector will show all available tools from your MCP server
+4. **Test Tools**: Click on any tool to see its schema and test it with different parameters
+5. **View Responses**: See real-time responses and debug any issues
+
+#### Inspector Benefits
+- **Tool Discovery**: Automatically lists all available tools with their schemas
+- **Interactive Testing**: Test tools with custom parameters without writing code
+- **Response Inspection**: View detailed request/response data for debugging
+- **Schema Validation**: Verify your tool schemas are correctly implemented
+- **Development Workflow**: Rapid iteration and testing during development
+
+#### Example Inspector Session
+1. Launch inspector: `npx @modelcontextprotocol/inspector dotnet run --project .`
+2. Open the web interface
+3. Click on `GetMonkeys` to see available monkeys
+4. Test `GetMonkeyByName` with parameter `name: "Bobo"`
+5. Try `DrawMonkeyGraph` to generate population visualization
+6. Use `TestTool` to verify server connectivity
 
 ### Automated Testing
 ```bash
